@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        int value = 3;
+        int value = 2;
 //        if (value == 1) {
 //            System.out.println("Value was 1");
 //        } else if (value == 2) {
@@ -10,23 +10,44 @@ public class Main {
 //            System.out.println("Was not 1 or 2");
 //        }
 
+//        switch (value) {
+//            case 1:
+//                System.out.println("Value was 1");
+//                break;
+//            case 2:
+//                System.out.println("Value was 2");
+//                break;
+//            case 3:
+//            case 4:
+//            case 5:
+//            System.out.println("Was 3, 4 or 5");
+//            break;
+//            default:
+//                System.out.println("Was not 1 or 2, 3, 4 or 5");
+//                break;
+//        }
+
         switch (value) {
-            case 1:
-                System.out.println("Value was 1");
-                break;
-            case 2:
-                System.out.println("Value was 2");
-                break;
-            case 3:
-            case 4:
-            case 5:
-            System.out.println("Was 3, 4 or 5");
-            break;
-            default:
-                System.out.println("Was not 1 or 2, 3, 4 or 5");
-                break;
+            case 1 -> System.out.println("Value was 1");
+            case 2 -> System.out.println("Value was 2");
+            default -> System.out.println("Was not 1 or 2, 3, 4 or 5");
         }
+        String month = "April";
+    System.out.println(getQuarter(month));
+    }
 
 
+    public static String getQuarter(String month) {
+        return switch (month) {
+            case "January", "February", "March" -> "1st";
+            case "April", "May", "June" -> "2nd";
+            case "July", "August", "September" -> "3rd";
+            case "October", "November", "December" -> "4th";
+            default -> {
+                String badResponse = month + " is bad";
+                yield badResponse;
+            }
+            // return ei toimi siin, tuleb yield kasutada
+        };
     }
 }
