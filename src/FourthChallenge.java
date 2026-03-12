@@ -8,14 +8,14 @@ public class FourthChallenge {
 //        System.out.println("17 is " + (isPrime(17) ? "" : "NOT ") + "a prime number.");
 
         int count = 0;
-        for (int i = 10; i <= 50; i++) {
+        for (int i = 10; count < 3 && i <= 50; i++) {
             if (isPrime(i)) {
                 System.out.println("Number " + i + " is a prime number");
                 count++;
-                if (count == 3) {
-                    System.out.println("Found 3 - exiting the loop");
-                    break;
-                }
+//                if (count == 3) {
+//                    System.out.println("Found 3 - exiting the loop");
+//                    break;
+//                }
             }
         }
         System.out.println("Total number of prime numbers " + count);
